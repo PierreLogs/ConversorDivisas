@@ -10,6 +10,6 @@ public class CalculadorDeMoneda {
         }
         //Lògica de "Moneda Puente"
         double enUSD = origen.equals("USD") ? cantidad : cantidad / tasas.get(origen);
-        return enUSD * tasas.get(destino);
+        return Math.round(enUSD * tasas.get(destino));
     }
 }

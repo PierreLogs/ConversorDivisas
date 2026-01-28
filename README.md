@@ -23,7 +23,7 @@ El proyecto sigue una estructura organizada por paquetes:
 1. Obtén tu llave gratuita en [ExchangeRate-API](https://www.exchangerate-api.com/).
 2. En la clase `ConsultarMoneda.java`, reemplaza el espacio de la URL con tu llave:
    ```java
-   URI url = URI.create("[https://v6.exchangerate-api.com/v6/TU_API_KEY/latest/](https://v6.exchangerate-api.com/v6/TU_API_KEY/latest/)" + monedaBase);
+   URI url = URI.create("https://v6.exchangerate-api.com/v6/TU_API_KEY/latest/" + monedaBase);
     ```
 3. Asegúrate de agregar la librería Gson a las dependencias de tu proyecto.
 

@@ -14,10 +14,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Descargar Gson
+        run: |
+          curl -sL https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar -o gson.jar
       - name: Compilar
         run: |
-          javac -cp ".;gson-2.10.1.jar" -d out src/com/moneyexchange/principal/Principal.java
+          javac -cp "gson.jar" -d out $(find src -name "*.java")
       - name: Verificar compilación
         run: |
-          if (Test-Path out/) { Write-Host "Build OK" } else { exit 1 }
-        shell: pwsh
+          ls out/com/moneyexchange/ && echo "Build OK"

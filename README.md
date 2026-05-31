@@ -1,40 +1,40 @@
-# 💱 Conversor de Monedas - Java Challenge
+# 💱 Conversor de Monedas
 
-Bienvenido al sistema de intercambio de divisas desarrollado en Java. Este proyecto fue creado como parte del desafío de formación en el programa Alura Latam.
+![Java](https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=openjdk)
+![Gson](https://img.shields.io/badge/Gson-2.10.1-green?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 
-## 🚀 Funcionalidades
-- **Conversión en Tiempo Real:** Obtiene tasas de cambio actualizadas vía API.
-- **Historial de Consultas:** Guarda automáticamente tus operaciones en un archivo `historial_conversiones.json`.
-- **Formato Limpio:** Los resultados se muestran redondeados a dos decimales para mayor claridad.
-- **Validación de Datos:** Manejo de entradas incorrectas y códigos de moneda no existentes.
+Aplicación de consola en Java que convierte entre múltiples divisas usando la [ExchangeRate-API](https://www.exchangerate-api.com/). Obtiene tasas de cambio en tiempo real, guarda historial de conversiones y maneja validación de datos.
 
-## 🛠️ Tecnologías Utilizadas
-- **Java 17** (o superior)
-- **Gson 2.10.1** (Para el manejo de JSON)
-- **HttpClient** (Para las peticiones a la API)
-- **ExchangeRate-API** (Fuente de datos)
+## Funcionalidades
 
-## 📋 Estructura del Proyecto
-El proyecto sigue una estructura organizada por paquetes:
-- `com.moneyexchange.principal`: Contiene la clase `Principal` con el menú interactivo.
-- `com.moneyexchange.models`: Contiene los `Records` y clases de servicio como `ConsultarMoneda`, `CalculadorDeMoneda` y `GeneradorArchivos`.
+- **Conversión en tiempo real** vía API REST
+- **Historial de consultas** exportado a `historial_conversiones.json`
+- **Validación de datos** — manejo de entradas incorrectas y códigos inválidos
+- **Resultados formateados** a dos decimales
 
-## ⚙️ Configuración
-1. Obtén tu llave gratuita en [ExchangeRate-API](https://www.exchangerate-api.com/).
-2. En la clase `ConsultarMoneda.java`, reemplaza el espacio de la URL con tu llave:
+## Stack
+
+- Java 17+ con `java.net.http.HttpClient`
+- Gson 2.10.1 para parsing JSON
+- ExchangeRate-API como fuente de datos
+
+## Cómo usar
+
+```bash
+# Compilar
+javac -cp ".;gson-2.10.1.jar" src/com/moneyexchange/principal/Principal.java
+
+# Ejecutar
+java -cp ".;gson-2.10.1.jar" com.moneyexchange.principal.Principal
+```
+
+1. Obtén una API Key gratis en [exchangerate-api.com](https://www.exchangerate-api.com/)
+2. Insértala en `ConsultarMoneda.java`:
    ```java
    URI url = URI.create("https://v6.exchangerate-api.com/v6/TU_API_KEY/latest/" + monedaBase);
-    ```
-3. Asegúrate de agregar la librería Gson a las dependencias de tu proyecto.
+   ```
 
-## 📄 Ejemplo de Uso
-Al ejecutar el programa, verás un menú como este:
+## Licencia
 
-```
-1. Realizar una conversión
-2. Salir y ver historial
-```
-
-Si eliges la opción 1, ingresas el código de origen (ej. USD), el de destino (ej. PEN) y el monto. ¡El sistema hará el resto!
-
-Desarrollado por [PierreLogs](https://github.com/PierreLogs)
+MIT © [PierreLogs](https://github.com/PierreLogs)

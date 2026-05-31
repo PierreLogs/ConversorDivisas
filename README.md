@@ -2,6 +2,7 @@
 
 ![Java](https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=openjdk)
 ![Gson](https://img.shields.io/badge/Gson-2.10.1-green?style=for-the-badge)
+![CI](https://img.shields.io/github/actions/workflow/status/PierreLogs/ConversorDivisas/ci.yml?style=for-the-badge&label=build)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 
 Aplicación de consola en Java que convierte entre múltiples divisas usando la [ExchangeRate-API](https://www.exchangerate-api.com/). Obtiene tasas de cambio en tiempo real, guarda historial de conversiones y maneja validación de datos.
